@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Rock Paper Scissors Game</h1>
+        <form onsubmit="playGame(event)" name="gameForm">
+            <label for="user-input">Select Input</label>
+            <select name="user-input">
+                <option value="">Select Input</option>
+                <option value="rock">Rock</option>
+                <option value="paper">Paper</option>
+                <option value="scissors">Scissors</option>
+            </select>
+            <input type="submit" value="Play">
+        </form>
+        <h2 id="result"></h2>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
