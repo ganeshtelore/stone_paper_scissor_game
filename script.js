@@ -1,7 +1,18 @@
+let gameCount=1;
+let userWin = 0;
+let systemWin = 0;
 function playGame(event) {
     event.preventDefault();
-    let userWin = 0;
-    let systemWin = 0;
+    if(gameCount>=5){
+        if(userWin>systemWin) {
+            document.getElementById("score").textContent = `Limit Reached! Final Winner is User with score ${userWin}`;
+            resultElement.textContent = "";
+        }else{
+            document.getElementById("score").textContent = `Limit Reached! Final Winner is System with score ${userWin}`;
+        }
+    }else{
+    gameCount = gameCount+1;
+    
     const userInput = document.forms["gameForm"]["user-input"].value.toLowerCase().trim();
     const resultElement = document.getElementById("result");
     const choiceArray = ['rock', 'paper', 'scissors'];
@@ -9,9 +20,6 @@ function playGame(event) {
     if (userInput === randomChoice) {
         resultElement.textContent = "It's a tie! Both chose " + userInput;
         document.forms["gameForm"]["user-input"].value="";
-        userWin = 0;
-        systemWin = 0;
-        document.getElementById("score").textContent = "Your Score: " + userWin + " System Score: " + systemWin;
     } else if (
         (userInput === 'rock' && randomChoice === 'scissors') ||
         (userInput === 'paper' && randomChoice === 'rock') ||
@@ -30,4 +38,5 @@ function playGame(event) {
         resultElement.textContent = "Invalid input! Please enter rock, paper, or scissors.";
         document.forms["gameForm"]["user-input"].value="";
     }
+}
 }
