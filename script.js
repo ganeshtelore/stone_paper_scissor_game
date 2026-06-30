@@ -8,7 +8,7 @@ function playGame(event) {
             document.getElementById("score").textContent = `Limit Reached! Final Winner is User with score ${userWin}`;
             resultElement.textContent = "";
         }else{
-            document.getElementById("score").textContent = `Limit Reached! Final Winner is System with score ${userWin}`;
+            document.getElementById("score").textContent = `Limit Reached! Final Winner is System with score ${systemWin}`;
         }
     }else{
     gameCount = gameCount+1;
